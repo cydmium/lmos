@@ -1,0 +1,2 @@
+src/lms/_version.py export-subst
+src/lmos/_version.py export-subst
