@@ -20,3 +20,17 @@ def test_median_of_squares():
         lmos.median_of_squares(theta, A_odd, rhs_even)
     with pytest.raises(ValueError):
         lmos.median_of_squares(np.array([1, 2, 3]), A_odd, rhs_odd)
+
+
+def test_numerically_optimize():
+    """Tests for lmos.numerically_optimize"""
+    np.random.seed(0)
+    n = 201
+    A = np.ones((n, 2))
+    A[:, 1] = np.arange(n)
+    rhs = 2 * A[:, 1] + 3 + np.random.normal(0, 30, n)
+    initial_theta = np.array([10, 5])
+    theta, error = lmos.numerically_optimize(initial_theta, A, rhs)
+    assert 470 < error < 480
+    assert 1.9 < theta[1] < 2.1
+    assert error == lmos.median_of_squares(theta, A, rhs)
