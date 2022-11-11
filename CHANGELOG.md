@@ -8,5 +8,6 @@ All dates listed follow the ISO standard of yyyy-mm-dd.
 ### Added
  - median_of_squares function to compute median of squared residuals [David Richardson <drichardson42@gatech.edu>]
  - numerically_optimize function to determine optimal theta vector [David Richardson <drichardson42@gatech.edu>]
+ - minimize_multiple_guesses function to determine optimal theta vector using multiple starting guesses [David Richardson <drichardson42@gatech.edu>]
 ### Changed
 ### Removed
